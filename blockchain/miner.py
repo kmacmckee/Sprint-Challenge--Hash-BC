@@ -44,6 +44,8 @@ def valid_proof(last_hash, proof):
     last_hash = str(last_hash)
     hash_proof = hashlib.sha256(encoded_proof).hexdigest()
 
+    return hash_proof[:6] == last_hash[-6:]
+
 
 if __name__ == '__main__':
     # What node are we interacting with?
